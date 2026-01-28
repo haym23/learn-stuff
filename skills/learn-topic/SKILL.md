@@ -1,5 +1,5 @@
 ---
-name: learn-page
+name: learn-topic
 description: Generate beautiful multi-page HTML learning sites with smooth animations, navigation, and interactive elements inspired by PostgreSQL Odyssey
 argument-hint: "[topic]"
 allowed-tools: mcp_write mcp_read mcp_bash mcp_delegate_task mcp_context7_resolve-library-id mcp_context7_query-docs mcp_grep_app_searchGitHub mcp_websearch_web_search_exa
@@ -464,14 +464,14 @@ Open ~/learning-pages/[topic-name]/index.html in your browser
 
 **As slash command:**
 ```
-/learn-page React Hooks and State Management
+/learn-topic React Hooks and State Management
 ```
 
 **With delegate_task:**
 ```typescript
 delegate_task(
   category="writing",
-  load_skills=["learn-page"],
+  load_skills=["learn-topic"],
   run_in_background=false,
   description="Create learning site about Docker",
   prompt="Create a comprehensive learning site about Docker containers, focusing on practical usage for developers. Include examples with Node.js applications."

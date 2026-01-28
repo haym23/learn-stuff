@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game Analysis - Chess Learning Guide</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <nav class="page-nav">
+      <a href="page-3.html">← Previous</a>
+      <span style="color: var(--text-muted);">Chapter 4 of 7</span>
+      <a href="page-5.html">Next →</a>
+    </nav>
+    
+    <article>
+      <header class="chapter-header">
+        <span class="chapter-number">Chapter 4</span>
+        <h1>Game Analysis - Learning from Your Mistakes</h1>
+      </header>
+      
+      <section class="intro-section">
+        <p class="lead">
+          "The fastest way to add rating points isn't another opening line, it's squeezing every 
+          lesson out of your own games." Most players analyze games wrong—or not at all. This chapter 
+          teaches you the systematic 4-step analysis process that accelerates improvement.
+        </p>
+      </section>
+      
+      <section class="content-section">
+        <h2>Why Most Players Analyze Wrong</h2>
+        
+        <p>
+          Common analysis mistakes that waste time and prevent learning:
+        </p>
+        
+        <div class="two-column">
+          <div class="card" style="border-color: var(--danger);">
+            <h4>❌ Ineffective Analysis</h4>
+            <ul>
+              <li>Click "Request Computer Analysis" immediately</li>
+              <li>Look only at move accuracy percentages</li>
+              <li>Focus on engine's preferred moves without understanding why</li>
+              <li>Analyze every single move instead of critical moments</li>
+              <li>Never create actionable training from mistakes</li>
+            </ul>
+            <p><strong>Result:</strong> Learn what the computer thinks, not how to think.</p>
+          </div>
+          
+          <div class="card" style="border-color: var(--success);">
+            <h4>✅ Effective Analysis</h4>
+            <ul>
+              <li>Write down your thoughts first (what you were calculating)</li>
+              <li>Identify 2-3 critical turning points manually</li>
+              <li>Analyze WITHOUT engine, finding your own alternatives</li>
+              <li>Use engine to verify, focusing on biggest mistakes only</li>
+              <li>Create specific training exercises from each mistake type</li>
+            </ul>
+            <p><strong>Result:</strong> Learn to think independently and improve judgment.</p>
+          </div>
+        </div>
+        
+        <div class="callout callout-warning">
+          <span class="callout-icon">⚠️</span>
+          <div class="callout-content">
+            <strong>The Engine Trap:</strong> Over-reliance on engine analysis creates "learned helplessness." 
+            You become dependent on the computer's evaluation instead of developing your own chess intuition. 
+            Always analyze manually first.
+          </div>
+        </div>
+      </section>
+      
+      <section class="content-section">
+        <h2>The 4-Step Analysis Process</h2>
+        
+        <p>
+          This systematic approach (used by titled players and coaches) ensures you extract maximum 
+          learning from every game:
+        </p>
+        
+        <h3>Step 1: Immediate Post-Game Review (5-10 minutes)</h3>
+        
+        <p>
+          <strong>Do this within 30 minutes of finishing the game, while memory is fresh.</strong>
+        </p>
+        
+        <div class="code-block">
+          <pre><code>Questions to answer:
+├─ What was I thinking during the critical moments?
+├─ Where did I feel confident vs. uncertain?
+├─ What surprised me about my opponent's moves?
+├─ Did I stick to my plan or play randomly?
+├─ What were the 2-3 turning points?
+└─ Which phase went best/worst: opening, middlegame, endgame?</code></pre>
+          <button class="copy-btn">Copy</button>
+        </div>
+        
+        <p><strong>Write this down.</strong> Don't just think it—write it in a notebook or document. 
+           The act of writing forces clarity and creates a record for later review.</p>
+        
+        <div class="callout callout-tip">
+          <span class="callout-icon">💡</span>
+          <div class="callout-content">
+            <strong>Pro Tip:</strong> Use a simple template. "Move 15: I calculated Nxe4 but worried 
+            about ...Qh4+. Move 23: I felt lost and played random moves. Move 31: I missed the back-rank 
+            mate completely."
+          </div>
+        </div>
+        
+        <h3>Step 2: Manual Analysis (20-30 minutes, same day)</h3>
+        
+        <p>
+          <strong>Replay the game WITHOUT engine assistance.</strong> This is the most important step—
+          where real learning happens.
+        </p>
+        
+        <div class="reveal-section" data-reveal="false">
+          <button class="reveal-trigger">Show Detailed Manual Analysis Workflow</button>
+          <div class="reveal-content">
+            <h4>How to Analyze Manually</h4>
+            
+            <p><strong>Setup:</strong></p>
+            <ul>
+              <li>Use analysis board (Lichess or Chess.com) WITHOUT computer evaluation</li>
+              <li>Have your post-game notes nearby</li>
+              <li>Set aside 20-30 uninterrupted minutes</li>
+            </ul>
+            
+            <p><strong>For Each Critical Moment (2-3 per game):</strong></p>
+            <ol>
+              <li><strong>What did I play?</strong> Note your move and your reasoning (from memory).</li>
+              <li><strong>What were my alternatives?</strong> Find 2-3 other candidate moves. Analyze each briefly.</li>
+              <li><strong>What did opponent play?</strong> Was I expecting this? Why/why not?</li>
+              <li><strong>Calculate variations:</strong> Work through the critical lines WITHOUT moving pieces. 
+                  Write down your main line: "If I play X, opponent plays Y, then I play Z..."</li>
+              <li><strong>Evaluate results:</strong> Which variation leads to better position for me? Why?</li>
+            </ol>
+            
+            <p><strong>Example Manual Analysis (Move 23):</strong></p>
+            <div class="code-block">
+              <pre><code>Position after 22...Nc6
+My move: 23.Bb5? (pinning knight)
+My reasoning: "I thought pinning the knight wins a pawn"
+
+Alternatives I should have considered:
+1) 23.Nd5 - centralizing knight, more active
+2) 23.Rc1 - controlling open file
+3) 23.f4 - starting kingside attack
+
+What actually happened: 23...a6! 24.Ba4 b5 25.Bb3 
+and I lost the initiative.
+
+What I should have calculated:
+After 23.Bb5 a6 24.Bxc6 - I win knight but after 
+24...Qxc6 Black has bishop pair and better pawn structure.
+
+Lesson: Don't win material if it activates opponent's pieces 
+and ruins your pawn structure.</code></pre>
+              <button class="copy-btn">Copy</button>
+            </div>
+            
+            <div class="callout callout-success">
+              <span class="callout-icon">♟️</span>
+              <div class="callout-content">
+                <strong>Why This Works:</strong> By finding alternatives yourself, you develop pattern 
+                recognition for similar positions. The engine will show you the "best" move, but manual 
+                analysis teaches you HOW to find good moves.
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <h3>Step 3: Engine Verification (15-20 minutes, next day)</h3>
+        
+        <p>
+          <strong>Wait at least 12-24 hours before using the engine.</strong> This delay forces you 
+          to rely on your own analysis first.
+        </p>
+        
+        <p><strong>How to use the engine effectively:</strong></p>
+        
+        <ul>
+          <li><strong>Focus on your mistakes only:</strong> Don't analyze every move. Target the 2-3 
+              positions where you struggled or made errors.</li>
+          <li><strong>Compare to your analysis:</strong> Check if the engine agrees with your candidate 
+              moves. If it suggests something completely different, understand WHY it's better.</li>
+          <li><strong>Categorize mistake types:</strong> Was it tactical (missed tactic), strategic 
+              (wrong plan), or technical (poor endgame)?</li>
+          <li><strong>Ignore minor inaccuracies:</strong> If engine says your move was 92% accuracy 
+              instead of 100%, it's usually irrelevant. Focus on blunders and mistakes (below 70% accuracy).</li>
+        </ul>
+        
+        <div class="tabs">
+          <div class="tab-buttons">
+            <button class="tab-btn active" data-tab="mistake-types">Mistake Categories</button>
+            <button class="tab-btn" data-tab="engine-use">Engine Best Practices</button>
+          </div>
+          
+          <div class="tab-content active" id="mistake-types">
+            <h4>The 5 Types of Chess Mistakes</h4>
+            
+            <p>Every mistake falls into one of these categories. Identifying the type determines your training:</p>
+            
+            <p><strong>1. Tactical Blunders (Missed tactics)</strong></p>
+            <ul>
+              <li><strong>Example:</strong> Hung a piece, missed opponent's back-rank mate, walked into fork</li>
+              <li><strong>Training:</strong> More tactical puzzles, pre-move checklist, slow down</li>
+            </ul>
+            
+            <p><strong>2. Calculation Errors (Miscalculated variation)</strong></p>
+            <ul>
+              <li><strong>Example:</strong> Calculated 5 moves deep but missed opponent's 3rd move option</li>
+              <li><strong>Training:</strong> Systematic calculation exercises, visualization training</li>
+            </ul>
+            
+            <p><strong>3. Strategic Mistakes (Wrong plan)</strong></p>
+            <ul>
+              <li><strong>Example:</strong> Attacked kingside when queenside was weak, improved wrong piece</li>
+              <li><strong>Training:</strong> Study pawn structures, master games with similar positions</li>
+            </ul>
+            
+            <p><strong>4. Opening Errors (Left preparation too early)</strong></p>
+            <ul>
+              <li><strong>Example:</strong> Didn't know theory, played novelty that loses by force</li>
+              <li><strong>Training:</strong> Deepen opening preparation in that specific line</li>
+            </ul>
+            
+            <p><strong>5. Endgame Technique (Didn't know theoretical position)</strong></p>
+            <ul>
+              <li><strong>Example:</strong> Drew winning rook endgame, lost drawn position</li>
+              <li><strong>Training:</strong> Study that specific endgame type until automatic</li>
+            </ul>
+          </div>
+          
+          <div class="tab-content" id="engine-use">
+            <h4>How to Use Engine Analysis Properly</h4>
+            
+            <p><strong>Good engine usage:</strong></p>
+            <ul>
+              <li>Check critical positions only (2-3 per game)</li>
+              <li>Understand WHY engine move is better, not just what it is</li>
+              <li>Focus on moves where engine evaluation swings 1.0+ points</li>
+              <li>Use engine to confirm your analysis, not replace it</li>
+            </ul>
+            
+            <p><strong>Bad engine usage:</strong></p>
+            <ul>
+              <li>Letting engine run for entire game, staring at numbers</li>
+              <li>Memorizing "98% accuracy" percentages without learning anything</li>
+              <li>Trying to understand why engine prefers 0.3 evaluation over 0.2</li>
+              <li>Using engine as crutch instead of developing own judgment</li>
+            </ul>
+            
+            <div class="callout callout-warning">
+              <span class="callout-icon">⚠️</span>
+              <div class="callout-content">
+                <strong>Accuracy Percentages Are Misleading:</strong> A game with 85% accuracy where you 
+                made 1 blunder teaches more than 95% accuracy where you played solidly but passively. 
+                Focus on MISTAKES that cost you the game, not overall accuracy.
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <h3>Step 4: Create Training Tasks (10 minutes)</h3>
+        
+        <p>
+          <strong>This step separates improving players from stagnant players.</strong> Analysis without 
+          action is entertainment, not training.
+        </p>
+        
+        <p>For each significant mistake, create a specific training task:</p>
+        
+        <div class="code-block">
+          <pre><code>Mistake Type → Training Task
+
+Missed Tactic (e.g., overlooked knight fork)
+└─> Practice 20 knight fork puzzles on ChessTempo
+
+Calculation Error (miscounted variation depth)
+└─> Do 3 visualization exercises (blindfold practice)
+
+Strategic Error (attacked wrong wing)
+└─> Study 3 master games with similar pawn structure
+
+Opening Mistake (didn't know theory)
+└─> Add that line to Chessable repertoire, review 3x
+
+Endgame Technique (lost winning R+P vs R)
+└─> Practice Lucena/Philidor positions until automatic</code></pre>
+          <button class="copy-btn">Copy</button>
+        </div>
+        
+        <div class="callout callout-success">
+          <span class="callout-icon">♟️</span>
+          <div class="callout-content">
+            <strong>Personalized Training:</strong> This approach creates a customized training plan based 
+            on YOUR weaknesses, not generic advice. Every game analyzed adds 2-3 specific exercises to 
+            your training queue.
+          </div>
+        </div>
+      </section>
+      
+      <section class="content-section">
+        <h2>The Pre-Move Checklist: Preventing Blunders</h2>
+        
+        <p>
+          70% of blunders can be prevented with a simple pre-move checklist. <strong>Ask these 3 questions 
+          before EVERY move:</strong>
+        </p>
+        
+        <div class="reveal-section" data-reveal="false">
+          <button class="reveal-trigger">Show Complete Pre-Move Checklist</button>
+          <div class="reveal-content">
+            <h4>3-Question Blunder Prevention System</h4>
+            
+            <p><strong>Question 1: "What is my opponent threatening?"</strong></p>
+            <ul>
+              <li>Look for checks, captures, attacks on your pieces</li>
+              <li>Check if they're setting up a tactic (discovered attack, pin, fork)</li>
+              <li>This alone prevents 40% of blunders</li>
+            </ul>
+            
+            <p><strong>Question 2: "Are all my pieces defended?"</strong></p>
+            <ul>
+              <li>Count attackers vs. defenders on every piece</li>
+              <li>Especially check pieces you just moved (easy to leave hanging)</li>
+              <li>Prevents another 30% of blunders</li>
+            </ul>
+            
+            <p><strong>Question 3: "Is there a better move than my first idea?"</strong></p>
+            <ul>
+              <li>First idea is often impulsive—force yourself to find 1-2 alternatives</li>
+              <li>Compare: which move improves my position most?</li>
+              <li>This creates the habit of finding BEST moves, not just good moves</li>
+            </ul>
+            
+            <h4>Implementation</h4>
+            
+            <p><strong>Week 1-2:</strong> Say checklist OUT LOUD every move (even in online games)</p>
+            <p><strong>Week 3-4:</strong> Think checklist silently but deliberately</p>
+            <p><strong>Week 5+:</strong> Checklist becomes automatic habit</p>
+            
+            <div class="callout callout-tip">
+              <span class="callout-icon">💡</span>
+              <div class="callout-content">
+                <strong>Expected Results:</strong> Players who adopt this checklist report 50-70% reduction 
+                in blunders within 2-3 weeks. Yes, games take longer initially, but rating gains more than 
+                compensate.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <section class="content-section">
+        <h2>Analysis Tools & Resources</h2>
+        
+        <div class="two-column">
+          <div class="card">
+            <h4>Free Analysis Tools</h4>
+            <ul>
+              <li><strong>Lichess Analysis Board:</strong> Unlimited engine analysis, study creation, best free option</li>
+              <li><strong>Chess.com Game Review:</strong> 1 free/day, identifies mistakes automatically</li>
+              <li><strong>Stockfish (standalone):</strong> Free download, most powerful engine</li>
+            </ul>
+          </div>
+          
+          <div class="card">
+            <h4>Paid Analysis Tools</h4>
+            <ul>
+              <li><strong>Chessigma:</strong> AI analysis identifies mistake patterns, creates personalized training</li>
+              <li><strong>Chess.com Diamond:</strong> Unlimited analysis, advanced insights</li>
+              <li><strong>ChessBase 2026:</strong> Professional database + analysis ($199)</li>
+            </ul>
+          </div>
+        </div>
+        
+        <h3>Weekly Analysis Schedule</h3>
+        
+        <p>How many games should you analyze per week?</p>
+        
+        <div class="code-block">
+          <pre><code>Beginners (0-1200):
+└─ Analyze 2-3 games/week (focus on blunders)
+
+Intermediate (1200-1800):
+└─ Analyze 3-5 games/week (all losses + close wins)
+
+Advanced (1800+):
+└─ Analyze 5-7 games/week (all games except trivial wins)
+
+General Rule:
+Better to analyze 3 games deeply than 10 games superficially</code></pre>
+          <button class="copy-btn">Copy</button>
+        </div>
+      </section>
+      
+      <section class="summary">
+        <h2>Key Takeaways</h2>
+        <ul>
+          <li>Most players analyze wrong—they rely on engine immediately instead of thinking independently</li>
+          <li>4-Step Process: (1) Immediate reflection, (2) Manual analysis, (3) Engine verification, (4) Create training tasks</li>
+          <li>Categorize mistakes into 5 types: tactical, calculation, strategic, opening, endgame—each requires different training</li>
+          <li>Pre-move checklist prevents 70% of blunders: "What's opponent threatening? Are pieces defended? Better move exists?"</li>
+          <li>Create specific training from every mistake—turn analysis into action, not just contemplation</li>
+          <li>Quality over quantity: 3 deeply analyzed games teach more than 10 superficial reviews</li>
+        </ul>
+      </section>
+    </article>
+    
+    <nav class="page-nav bottom">
+      <a href="page-3.html">← Previous</a>
+      <span style="color: var(--text-muted);">Chapter 4 of 7</span>
+      <a href="page-5.html">Next: Training Plans →</a>
+    </nav>
+  </div>
+  
+  <script src="script.js"></script>
+</body>
+</html>

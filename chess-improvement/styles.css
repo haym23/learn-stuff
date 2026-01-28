@@ -1,0 +1,730 @@
+/* Chess Improvement Learning Site - Shared Styles */
+
+/* ===== CSS Variables ===== */
+:root {
+  /* Colors - Dark Theme */
+  --bg-primary: #0a0e27;
+  --bg-secondary: #141b34;
+  --bg-tertiary: #1e2746;
+  --text-primary: #e2e8f0;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --accent: #3b82f6;
+  --accent-hover: #60a5fa;
+  --accent-dark: #2563eb;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  --border: #334155;
+  
+  /* Chess-specific colors */
+  --chess-light: #f0d9b5;
+  --chess-dark: #b58863;
+  
+  /* Typography */
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  
+  /* Animation Easing */
+  --ease-organic: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-breathe: cubic-bezier(0.45, 0.05, 0.55, 0.95);
+  --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  
+  /* Spacing */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+}
+
+/* ===== Animation Keyframes ===== */
+@keyframes breathe {
+  0%, 100% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.8);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes chess-bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* ===== Animation Utility Classes ===== */
+.animate-breathe {
+  animation: breathe 3s var(--ease-breathe) infinite;
+}
+
+.animate-heartbeat {
+  animation: heartbeat 1.5s var(--ease-organic) infinite;
+}
+
+.animate-pulse-ring {
+  animation: pulse-ring 2s var(--ease-organic) infinite;
+}
+
+.animate-bounce {
+  animation: chess-bounce 2s var(--ease-organic) infinite;
+}
+
+.fade-in-up {
+  animation: fade-in-up 0.6s var(--ease-organic) both;
+}
+
+.slide-in-right {
+  animation: slide-in-right 0.5s var(--ease-organic) both;
+}
+
+.transition-all {
+  transition: all 0.3s var(--ease-organic);
+}
+
+/* ===== Base Styles ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ===== Typography ===== */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: var(--space-md);
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  letter-spacing: -0.01em;
+}
+
+h3 {
+  font-size: clamp(1.25rem, 3vw, 1.875rem);
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
+p {
+  margin-bottom: var(--space-md);
+  color: var(--text-secondary);
+}
+
+.lead {
+  font-size: 1.25rem;
+  line-height: 1.7;
+  color: var(--text-primary);
+  margin-bottom: var(--space-xl);
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.2s var(--ease-organic);
+}
+
+a:hover {
+  color: var(--accent-hover);
+}
+
+/* ===== Layout ===== */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: var(--space-xl) var(--space-lg);
+}
+
+.container-wide {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--space-xl) var(--space-lg);
+}
+
+/* ===== Hero Section ===== */
+.hero {
+  text-align: center;
+  padding: var(--space-3xl) 0 var(--space-2xl);
+  position: relative;
+}
+
+.hero h1 {
+  background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: var(--space-md);
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  margin-bottom: 0;
+}
+
+/* ===== Navigation ===== */
+.page-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-lg) 0;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: var(--space-2xl);
+  gap: var(--space-md);
+}
+
+.page-nav.bottom {
+  border-bottom: none;
+  border-top: 1px solid var(--border);
+  margin-top: var(--space-3xl);
+  margin-bottom: 0;
+}
+
+.page-nav a {
+  padding: var(--space-sm) var(--space-lg);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  font-weight: 500;
+  transition: all 0.2s var(--ease-organic);
+}
+
+.page-nav a:hover {
+  background: var(--bg-tertiary);
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+/* ===== Table of Contents ===== */
+.toc {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  padding: var(--space-xl);
+  margin: var(--space-2xl) 0;
+}
+
+.toc h2 {
+  margin-bottom: var(--space-lg);
+  color: var(--accent);
+}
+
+.toc ol {
+  list-style: none;
+  counter-reset: toc-counter;
+}
+
+.toc ol li {
+  counter-increment: toc-counter;
+  margin-bottom: var(--space-md);
+}
+
+.toc ol li a {
+  display: flex;
+  align-items: center;
+  padding: var(--space-md);
+  background: var(--bg-tertiary);
+  border-radius: 0.5rem;
+  transition: all 0.2s var(--ease-organic);
+  border: 1px solid transparent;
+}
+
+.toc ol li a:hover {
+  background: var(--bg-primary);
+  border-color: var(--accent);
+  transform: translateX(5px);
+}
+
+.toc ol li a::before {
+  content: counter(toc-counter);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  background: var(--accent);
+  color: white;
+  border-radius: 50%;
+  margin-right: var(--space-md);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* ===== Chapter Header ===== */
+.chapter-header {
+  margin-bottom: var(--space-2xl);
+  padding-bottom: var(--space-lg);
+  border-bottom: 2px solid var(--accent);
+}
+
+.chapter-number {
+  display: inline-block;
+  padding: var(--space-xs) var(--space-md);
+  background: var(--accent);
+  color: white;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--space-md);
+}
+
+/* ===== Content Sections ===== */
+.intro-section {
+  margin-bottom: var(--space-2xl);
+}
+
+.content-section {
+  margin-bottom: var(--space-3xl);
+}
+
+.content-section h2 {
+  color: var(--accent);
+  margin-top: var(--space-2xl);
+  margin-bottom: var(--space-lg);
+}
+
+.content-section h3 {
+  margin-top: var(--space-xl);
+  margin-bottom: var(--space-md);
+}
+
+/* ===== Code Blocks ===== */
+.code-block {
+  position: relative;
+  margin: var(--space-xl) 0;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+.code-block pre {
+  margin: 0;
+  padding: var(--space-lg);
+  overflow-x: auto;
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  line-height: 1.7;
+}
+
+.code-block code {
+  font-family: var(--font-mono);
+  color: var(--text-primary);
+}
+
+.copy-btn {
+  position: absolute;
+  top: var(--space-sm);
+  right: var(--space-sm);
+  padding: var(--space-xs) var(--space-md);
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border);
+  border-radius: 0.25rem;
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s var(--ease-organic);
+}
+
+.copy-btn:hover {
+  background: var(--accent);
+  color: white;
+  border-color: var(--accent);
+}
+
+/* ===== Lists ===== */
+ul, ol {
+  margin-left: var(--space-xl);
+  margin-bottom: var(--space-lg);
+}
+
+li {
+  margin-bottom: var(--space-sm);
+  color: var(--text-secondary);
+}
+
+li strong {
+  color: var(--text-primary);
+}
+
+/* ===== Callouts ===== */
+.callout {
+  display: flex;
+  gap: var(--space-md);
+  padding: var(--space-lg);
+  margin: var(--space-xl) 0;
+  border-radius: 0.75rem;
+  border-left: 4px solid;
+}
+
+.callout-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.callout-content {
+  flex: 1;
+}
+
+.callout-tip {
+  background: rgba(59, 130, 246, 0.1);
+  border-color: var(--accent);
+}
+
+.callout-warning {
+  background: rgba(245, 158, 11, 0.1);
+  border-color: var(--warning);
+}
+
+.callout-danger {
+  background: rgba(239, 68, 68, 0.1);
+  border-color: var(--danger);
+}
+
+.callout-success {
+  background: rgba(16, 185, 129, 0.1);
+  border-color: var(--success);
+}
+
+/* ===== Interactive Elements ===== */
+.reveal-section {
+  margin: var(--space-xl) 0;
+}
+
+.reveal-trigger {
+  width: 100%;
+  padding: var(--space-md) var(--space-lg);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  color: var(--accent);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s var(--ease-organic);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+}
+
+.reveal-trigger:hover {
+  background: var(--bg-tertiary);
+  border-color: var(--accent);
+}
+
+.reveal-trigger::after {
+  content: '▼';
+  font-size: 0.75rem;
+  transition: transform 0.3s var(--ease-organic);
+}
+
+.reveal-section[data-reveal="true"] .reveal-trigger::after {
+  transform: rotate(180deg);
+}
+
+.reveal-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s var(--ease-organic);
+  padding: 0 var(--space-lg);
+}
+
+.reveal-section[data-reveal="true"] .reveal-content {
+  max-height: 3000px;
+  padding: var(--space-lg);
+  border: 1px solid var(--border);
+  border-top: none;
+  border-radius: 0 0 0.5rem 0.5rem;
+  background: var(--bg-secondary);
+}
+
+/* ===== Tabs ===== */
+.tabs {
+  margin: var(--space-xl) 0;
+}
+
+.tab-buttons {
+  display: flex;
+  gap: var(--space-sm);
+  border-bottom: 2px solid var(--border);
+  margin-bottom: var(--space-lg);
+}
+
+.tab-btn {
+  padding: var(--space-md) var(--space-lg);
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s var(--ease-organic);
+}
+
+.tab-btn:hover {
+  color: var(--accent-hover);
+}
+
+.tab-btn.active {
+  color: var(--accent);
+}
+
+.tab-btn.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--accent);
+}
+
+.tab-content {
+  display: none;
+  animation: fade-in-up 0.4s var(--ease-organic);
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* ===== Summary / Key Takeaways ===== */
+.summary {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(96, 165, 250, 0.05));
+  border: 2px solid var(--accent);
+  border-radius: 1rem;
+  padding: var(--space-xl);
+  margin: var(--space-3xl) 0;
+}
+
+.summary h2 {
+  color: var(--accent);
+  margin-bottom: var(--space-lg);
+}
+
+.summary ul {
+  list-style: none;
+  margin-left: 0;
+}
+
+.summary li {
+  position: relative;
+  padding-left: var(--space-xl);
+  margin-bottom: var(--space-md);
+  color: var(--text-primary);
+}
+
+.summary li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--success);
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+/* ===== Buttons ===== */
+.btn-primary {
+  display: inline-block;
+  padding: var(--space-md) var(--space-2xl);
+  background: var(--accent);
+  color: white;
+  font-weight: 600;
+  font-size: 1.125rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s var(--ease-organic);
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+}
+
+.cta {
+  text-align: center;
+  margin: var(--space-3xl) 0;
+}
+
+/* ===== Grid Layouts ===== */
+.two-column {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-xl);
+  margin: var(--space-xl) 0;
+}
+
+.card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  padding: var(--space-lg);
+  transition: all 0.2s var(--ease-organic);
+}
+
+.card:hover {
+  border-color: var(--accent);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.card h3 {
+  color: var(--accent);
+  margin-bottom: var(--space-md);
+}
+
+/* ===== Chess Board Visual ===== */
+.chess-board-mini {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  background: linear-gradient(45deg, var(--chess-dark) 25%, transparent 25%, transparent 75%, var(--chess-dark) 75%),
+              linear-gradient(45deg, var(--chess-dark) 25%, var(--chess-light) 25%, var(--chess-light) 75%, var(--chess-dark) 75%);
+  background-size: 1rem 1rem;
+  background-position: 0 0, 0.5rem 0.5rem;
+  border-radius: 0.25rem;
+  vertical-align: middle;
+  margin-right: var(--space-sm);
+}
+
+/* ===== Progress Indicator ===== */
+.progress-bar {
+  width: 100%;
+  height: 0.5rem;
+  background: var(--bg-secondary);
+  border-radius: 1rem;
+  overflow: hidden;
+  margin: var(--space-md) 0;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent), var(--accent-hover));
+  border-radius: 1rem;
+  transition: width 0.6s var(--ease-organic);
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+  .container {
+    padding: var(--space-lg) var(--space-md);
+  }
+  
+  .hero {
+    padding: var(--space-2xl) 0 var(--space-xl);
+  }
+  
+  .page-nav {
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+  }
+  
+  .page-nav a {
+    flex: 1 1 auto;
+    text-align: center;
+    font-size: 0.875rem;
+    padding: var(--space-sm) var(--space-md);
+  }
+  
+  .two-column {
+    grid-template-columns: 1fr;
+  }
+  
+  .toc {
+    padding: var(--space-lg);
+  }
+}
+
+/* ===== Print Styles ===== */
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+  
+  .page-nav,
+  .cta,
+  .copy-btn {
+    display: none;
+  }
+}
